@@ -16,10 +16,6 @@
   - **Flexbox** and **CSS Grid** – For responsive and adaptive layout design
   - **Media Queries** – To ensure the site looks great on all screen sizes
 
-## 📸 Screenshots
-
-![Spots website preview](/images/Screen%20Shot%202025-04-27%20at%208.43.37%20PM.png)
-
 ## 🎥 Project Video
 
 https://www.loom.com/share/9cd0ba447462458c8a25cf33829f96f7
