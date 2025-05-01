@@ -24,17 +24,3 @@ https://www.loom.com/share/9cd0ba447462458c8a25cf33829f96f7
 
 Check out the live version here:  
 [https://github.com/ZakiaC-tech/se_project_spots]
-
-## 📦 Installation
-
-To run the project locally:
-
-```bash
-# Clone the repo
-git clone https://github.com/ZakiaC-tech/se_project_spots
-
-# Navigate into the project directory
-cd spots
-
-# Open the index.html file in your browser
-```
