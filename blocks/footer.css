@@ -1,0 +1,11 @@
+.footer {
+  width: 100%;
+  display: block;
+  padding: 20px;
+  font-family: Poppins;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
+}

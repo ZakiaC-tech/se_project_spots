@@ -1,21 +1,44 @@
-# Project 3: Spots
+# Spots
 
-### Overview  
+**Spots** is a clean and responsive **photo gallery showcase website** where users can browse through a curated collection of beautiful images. It’s designed with simplicity and style in mind, making it easy to navigate and enjoy visual content across devices.
 
-* Intro  
-* Figma  
-* Images  
-  
-**Intro**
-  
-This project is made so all the elements are displayed correctly on popular screen sizes. We recommend investing more time in completing this project, since it's more difficult than previous ones.  
-  
-**Figma**  
-  
-* [Link to the project on Figma](https://www.figma.com/file/BBNm2bC3lj8QQMHlnqRsga/Sprint-3-Project-%E2%80%94-Spots?type=design&node-id=2%3A60&mode=design&t=afgNFybdorZO6cQo-1)
-  
-**Images**  
-  
-The way you'll do this at work is by exporting images directly from Figma — we recommend doing that to practice more. Don't forget to optimize them [here](https://tinypng.com/), so your project loads faster. 
-  
-Good luck and have fun!
+## 🌟 Features
+
+- Responsive image gallery layout
+- Smooth navigation and image transitions
+- Clean and minimal user interface
+- Optimized for both desktop and mobile devices
+
+## 🖥️ Technologies Used
+
+- **HTML5** – Semantic structure for the web content
+- **CSS3** – Styling and layout
+  - **Flexbox** and **CSS Grid** – For responsive and adaptive layout design
+  - **Media Queries** – To ensure the site looks great on all screen sizes
+
+## 📸 Screenshots
+
+![Spots website preview](/images/Screen%20Shot%202025-04-27%20at%208.43.37%20PM.png)
+
+## 🎥 Project Video
+
+https://www.loom.com/share/9cd0ba447462458c8a25cf33829f96f7
+
+## 🚀 Live Demo
+
+Check out the live version here:  
+[https://github.com/ZakiaC-tech/se_project_spots]
+
+## 📦 Installation
+
+To run the project locally:
+
+```bash
+# Clone the repo
+git clone https://github.com/ZakiaC-tech/se_project_spots
+
+# Navigate into the project directory
+cd spots
+
+# Open the index.html file in your browser
+```
