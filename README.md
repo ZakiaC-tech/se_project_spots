@@ -23,4 +23,4 @@ https://www.loom.com/share/9cd0ba447462458c8a25cf33829f96f7
 ## 🚀 Live Demo
 
 Check out the live version here:  
-[https://github.com/ZakiaC-tech/se_project_spots]
+[https://zakiac-tech.github.io/se_project_spots/]
