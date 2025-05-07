@@ -12,7 +12,6 @@
       name="keywords"
       content="ravel spots, Val Thorens, mountain house, outdoor cafe, restaurant terrace, Bessie Coleman, aviation, travel photography, scenic locations"
     />
-    <link rel="stylesheet" href="./vendor/normalize.css" />
     <link rel="stylesheet" href="./vendor/fonts.css" />
     <link rel="stylesheet" href="./pages/index.css" />
     <link rel="icon" href="favicon.ico" />
@@ -22,17 +21,21 @@
     <header class="header">
       <img src="./images/Logo.svg" alt="spots logo" class="header__logo" />
 
-      <div class="header__profile">
+      <section class="profile">
         <img
           src="./images/avatar.jpg"
           alt="Bessie Coleman"
-          class="header__image"
+          class="profile__avatar"
         />
-        <div class="header__text">
-          <h1 class="header__name">Bessie Coleman</h1>
-          <p class="header__title">Civil Aviator</p>
+        <div class="profile__column">
+          <h1 class="profile__name">Bessie Coleman</h1>
+          <p class="profile__description">Civil Aviator</p>
+          <button class="profile__edit-btn" type="button">
+            ✎ Edit profile
+          </button>
         </div>
-      </div>
+        <button class="profile__new-post-btn" type="button">+ New post</button>
+      </section>
     </header>
     <main class="content">
       <div class="cards">
@@ -43,12 +46,12 @@
               alt="House in the mountains"
               class="card__image"
             />
+
             <div class="card__content">
-              <h2 class="card__title">Val Thorens</h2>
-              <p class="card__text">
-                A large, cozy house nestled in the snowy mountains, surrounded
-                by pine trees and covered in a blanket of fresh snow.
-              </p>
+              <div class="card__content-container">
+                <h2 class="card__title">Val Thorens</h2>
+                <button type="button" class="card__like-button">♡</button>
+              </div>
             </div>
           </article>
           <article class="card">
@@ -57,13 +60,12 @@
               alt="Restaurant Terrace"
               class="card__image"
             />
+
             <div class="card__content">
-              <h2 class="card__title">Restaurant Terrace</h2>
-              <p class="card__text">
-                A charming little restaurant tucked along a cobblestone street,
-                with flower boxes on the sills and a few cozy tables set
-                outside.
-              </p>
+              <div class="card__content-container">
+                <h2 class="card__title">Restaurant Terrace</h2>
+                <button type="button" class="card__like-button">♡</button>
+              </div>
             </div>
           </article>
           <article class="card">
@@ -72,13 +74,12 @@
               alt="Outdoor cafe"
               class="card__image"
             />
+
             <div class="card__content">
-              <h2 class="card__title">An Outdoor Cafe</h2>
-              <p class="card__text">
-                An outdoor café with wooden chairs and small tables on a
-                cobblestone patio, where people chat over coffee and flowers
-                decorate each table.
-              </p>
+              <div class="card__content-container">
+                <h2 class="card__title">An Outdoor Cafe</h2>
+                <button type="button" class="card__like-button">♡</button>
+              </div>
             </div>
           </article>
           <article class="card">
@@ -87,13 +88,12 @@
               alt="Long bridge"
               class="card__image"
             />
+
             <div class="card__content">
-              <h2 class="card__title">A Very Long Bridge over the Forest</h2>
-              <p class="card__text">
-                A long bridge stretches over a dense forest, suspended high
-                above the treetops with greenery stretching out in every
-                direction.
-              </p>
+              <div class="card__content-container">
+                <h2 class="card__title">A Very Long Bridge over the Forest</h2>
+                <button type="button" class="card__like-button">♡</button>
+              </div>
             </div>
           </article>
           <article class="card">
@@ -102,12 +102,12 @@
               alt="Empty building hall"
               class="card__image"
             />
+
             <div class="card__content">
-              <h2 class="card__title">Tunnel With Morning Light</h2>
-              <p class="card__text">
-                A covered pedestrian walkway with tall windows and a wooden
-                ceiling, casting long shadows as a person walks toward the exit.
-              </p>
+              <div class="card__content-container">
+                <h2 class="card__title">Tunnel With Morning Light</h2>
+                <button type="button" class="card__like-button">♡</button>
+              </div>
             </div>
           </article>
           <article class="card">
@@ -116,17 +116,19 @@
               alt="Cabin In The Snow"
               class="card__image"
             />
+
             <div class="card__content">
-              <h2 class="card__title">Mountain House</h2>
-              <p class="card__text">
-                A rustic wooden cabin sits quietly on a snowy hillside,
-                surrounded by mist and tall, frosted pine trees.
-              </p>
+              <div class="card__content-container">
+                <h2 class="card__title">Mountain House</h2>
+                <button type="button" class="card__like-button">♡</button>
+              </div>
             </div>
           </article>
         </div>
       </div>
     </main>
-    <footer class="footer">© 2025 Spots</footer>
+    <footer class="footer">
+      <p class="footer__text">© 2025 Spots</p>
+    </footer>
   </body>
 </html>
