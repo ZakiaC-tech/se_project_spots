@@ -1,16 +1,5 @@
 .card {
   position: relative;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  overflow: hidden;
-  background: white;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .cards__grid {
@@ -33,14 +22,15 @@
 
 .card__image {
   width: 100%;
-  aspect-ratio: 282/216;
+
   object-fit: cover;
-  height: auto;
+  height: 413px;
   display: block;
+  border-radius: 8px;
 }
 
 .card__content {
-  padding: 20px;
+  padding: 12px 0 0;
   color: #000;
 }
 
