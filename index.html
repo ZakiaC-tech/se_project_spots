@@ -28,9 +28,13 @@
           alt="Bessie Coleman"
           class="profile__avatar"
         />
-        <div class="profile__column">
-          <h1 class="profile__name">Bessie Coleman</h1>
-          <p class="profile__description">Civil Aviator</p>
+
+        <div class="profile__info">
+          <div class="profile__text">
+            <h1 class="profile__name">Bessie Coleman</h1>
+            <p class="profile__description">Civil Aviator</p>
+          </div>
+
           <button class="profile__edit-btn" type="button">
             <img
               src="./images/Edit_Icon.svg"
@@ -40,11 +44,12 @@
             Edit profile
           </button>
         </div>
+
         <button class="profile__new-post-btn">
           <img src="images/state_default.svg" alt="New post button" />
-          New Post
         </button>
       </section>
+
       <section class="cards">
         <div class="cards__grid">
           <article class="card">
@@ -56,6 +61,13 @@
 
             <div class="card__content">
               <h2 class="card__title">Val Thorens</h2>
+              <button type="button" class="card__like-button">
+                <img
+                  src="images/Like_Icon.svg"
+                  alt=" Like this post"
+                  class="like-icon"
+                />
+              </button>
             </div>
           </article>
           <article class="card">
