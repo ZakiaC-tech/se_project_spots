@@ -1,11 +1,11 @@
 .footer {
   max-width: 1280px;
   padding: 60px 20px;
-  font-family: Poppins;
+  font-family: "Poppins" Arial, sans-serif;
   font-weight: 400;
   font-size: 16px;
   line-height: 100%;
-  letter-spacing: 0%;
+
   display: flex;
   justify-content: center;
   margin: 0 auto;
