@@ -5,15 +5,15 @@
 .card__title {
   overflow: hidden;
   text-overflow: ellipsis;
-  margin: 0 0 12px;
+  margin: 0 12px 0 0;
   font-size: 20px;
   line-height: 1.2;
   max-width: 350px;
+  white-space: no wrap;
 }
 
 .card__image {
   width: 100%;
-
   object-fit: cover;
   height: 413px;
   display: block;
@@ -22,6 +22,8 @@
 
 .card__content {
   padding: 12px 0 0;
+  display: flex;
+  justify-content: space-between;
 }
 
 .card__like-button {
@@ -44,9 +46,17 @@
 }
 
 @media screen and (max-width: 767px) {
-  .cards__grid {
-    grid-template-columns: 1fr;
-    margin: 0;
-    padding: 0 20px;
+  .card__title {
+    font-size: 16px;
+    max-width: 250px;
+  }
+
+  .card__image {
+    height: 300px;
+  }
+
+  .card__like-button {
+    width: 20px;
+    height: 20px;
   }
 }
