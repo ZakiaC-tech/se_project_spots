@@ -2,8 +2,8 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   max-width: 1280px;
-  margin: 0 80px;
-  gap: 40px;
+
+  gap: 40px 20px;
   padding-bottom: 40px;
   border-bottom: 1px solid #21212166;
 }
@@ -15,7 +15,7 @@
   }
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 560px) {
   .cards__grid {
     grid-template-columns: 1fr;
     margin: 0;

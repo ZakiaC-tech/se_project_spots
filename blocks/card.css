@@ -9,7 +9,8 @@
   font-size: 20px;
   line-height: 1.2;
   max-width: 350px;
-  white-space: no wrap;
+  white-space: nowrap;
+  font-weight: 500;
 }
 
 .card__image {
@@ -36,13 +37,6 @@
 
 .card__like-button:hover {
   opacity: 1;
-}
-
-@media screen and (max-width: 1024px) {
-  .cards__grid {
-    grid-template-columns: repeat(2, 1fr);
-    margin: 0 40px;
-  }
 }
 
 @media screen and (max-width: 767px) {
