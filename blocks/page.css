@@ -2,8 +2,11 @@
   background-color: #fcf5e5;
   font-family: "Poppins", sans-serif;
   box-sizing: border-box;
-  max-width: 1280px;
-  margin: 0 auto;
   padding: 0;
   color: #212121;
+}
+
+.page__section {
+  max-width: 1280px;
+  margin: 0 auto;
 }
