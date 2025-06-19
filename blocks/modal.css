@@ -1,0 +1,152 @@
+.modal {
+  visibility: hidden;
+  background-color: #00000080;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.modal_is-opened {
+  visibility: visible;
+}
+
+.modal__container {
+  max-width: 730px;
+  max-height: 400px;
+  width: 100%;
+  border-radius: 8px;
+  background-color: #fff;
+  padding: 32px 50px;
+  position: relative;
+  border:8px;
+}
+
+.modal__close-btn {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  top: 32px;
+  right: 58px;
+  cursor: pointer;
+  background-image: url("../images/Group\ 27.svg");
+opacity: 0.4;
+
+}
+
+.modal__title {
+  margin: 0 0 32px;
+  font-family: Poppins;
+font-weight: 500;
+font-size: 32px;
+line-height: 100%;
+letter-spacing: 0%;
+
+}
+
+.modal__form {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal__input {
+  display: block;
+  margin: 8px 0 0;
+  width: 100%;
+  /* width: 630px;
+height: 52px; */
+border-radius: 8px;
+padding-top: 16px;
+padding-right: 12px;
+padding-bottom: 16px;
+padding-left: 12px;
+gap: 10px;
+border-width: 1px;
+
+}
+
+.modal__input::placeholder {
+  color: #2121214d;
+ 
+
+}
+
+.modal__label {
+  margin: 0 0 32px;
+}
+
+.modal__submit-btn{
+  width: 156px; 
+  height: 52px; 
+  border-radius: 8px; 
+  padding-top: 18px; 
+  padding-right: 32px; 
+  padding-bottom: 18px; 
+  padding-left: 32px; 
+  display: flex;
+  align-items: center; 
+  justify-content: center; 
+  gap: 8px; 
+  background-image: url("/images/Button\ Large.svg");
+  border: none;
+  font-size: 14px; /
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  background-color: #212121; 
+  color: white;
+}
+
+
+
+
+.modal__submit-btn:hover {
+  background-color: #444;
+}
+
+
+
+.modal__submit-btn:hover {
+  background-color: #444; /
+}
+
+@media (max-width: 560px) {
+  .modal__submit-btn {
+    width: 140px; 
+    height: 48px; 
+    padding-top: 12px; 
+    padding-right: 24px; 
+    padding-bottom: 12px; 
+    padding-left: 24px; 
+    font-size: 12px; 
+    gap: 6px; 
+  }
+
+  .modal__submit-btn img {
+    width: 20px; 
+  }
+}
+
+@media (max-width: 1024px) {
+  .modal__submit-btn {
+    width: 156px; 
+    height: 52px; 
+    padding-top: 18px; 
+    padding-right: 32px; 
+    padding-bottom: 18px; 
+    padding-left: 32px;
+    font-size: 14px; 
+    gap: 8px; 
+  }
+
+  .modal__submit-btn img {
+    width: 24px; 
+  }
+}
+
+
+ 
