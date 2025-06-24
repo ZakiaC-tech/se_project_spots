@@ -3,7 +3,7 @@
 
   justify-content: space-between;
   padding: 20px;
-  margin-bottom: 36px;
+
   background-color: #fdf6e3;
 
   gap: 20px;
@@ -40,7 +40,6 @@
   max-width: 373px;
   margin-bottom: 12px;
   line-height: 100%;
-  letter-spacing: 0%;
 }
 
 .profile__description {
