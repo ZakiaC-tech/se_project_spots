@@ -1,4 +1,5 @@
 console.log("Page script loaded and JavaScript is connected.");
+
 const initialCards = [
   {
     name: "Val Thorens",
@@ -47,14 +48,22 @@ const newPostForm = newPostModal.querySelector(".modal__form");
 const cardImageInput = newPostModal.querySelector("#card-image-input");
 const captionInput = newPostModal.querySelector("#caption-input");
 
+function openModal(modal) {
+  modal.classList.add("modal_is-opened");
+}
+
+function closeModal(modal) {
+  modal.classList.remove("modal_is-opened");
+}
+
 editProfileBtn.addEventListener("click", function () {
   nameInput.value = profileNameDisplay.textContent;
   descriptionInput.value = profileDescriptionDisplay.textContent;
-  editProfileModal.classList.add("modal_is-opened");
+  openModal(editProfileModal);
 });
 
 closeEditProfileBtn.addEventListener("click", function () {
-  editProfileModal.classList.remove("modal_is-opened");
+  closeModal(editProfileModal);
 });
 
 editProfileForm.addEventListener("submit", function (evt) {
@@ -63,26 +72,11 @@ editProfileForm.addEventListener("submit", function (evt) {
   profileNameDisplay.textContent = nameInput.value;
   profileDescriptionDisplay.textContent = descriptionInput.value;
 
-  editProfileModal.classList.remove("modal_is-opened");
+  closeModal(editProfileModal);
 });
 
 newPostBtn.addEventListener("click", function () {
-  newPostModal.classList.add("modal_is-opened");
+  openModal(newPostModal);
 });
 
-closeNewPostBtn.addEventListener("click", function () {
-  newPostModal.classList.remove("modal_is-opened");
-});
-
-newPostForm.addEventListener("submit", function (evt) {
-  evt.preventDefault();
-
-  console.log("Image link:", cardImageInput.value);
-  console.log("Caption:", captionInput.value);
-
-  newPostModal.classList.remove("modal_is-opened");
-});
-
-initialCards.forEach(function (card) {
-  console.log(card.name);
-});
+closeNewP;
