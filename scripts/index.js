@@ -79,4 +79,19 @@ newPostBtn.addEventListener("click", function () {
   openModal(newPostModal);
 });
 
-closeNewP;
+closeNewPostBtn.addEventListener("click", function () {
+  closeModal(newPostModal);
+});
+
+newPostForm.addEventListener("submit", function (evt) {
+  evt.preventDefault();
+
+  console.log("Image link:", cardImageInput.value);
+  console.log("Caption:", captionInput.value);
+
+  closeModal(newPostModal);
+});
+
+initialCards.forEach(function (card) {
+  console.log(card.name);
+});
