@@ -3,18 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Explore a curated collection of stunning travel spots, from snowy mountain retreats to charming cafes, presented through the lens of aviation pioneer Bessie Coleman's travels."
-    />
-    <meta name="author" content="Zakia Cromwell" />
-    <meta
-      name="keywords"
-      content="travel spots, Val Thorens, mountain house, outdoor cafe, restaurant terrace, Bessie Coleman, aviation, travel photography, scenic locations"
-    />
+    <title>Spots</title>
     <link rel="stylesheet" href="./pages/index.css" />
     <link rel="icon" href="favicon.ico" />
-    <title>Spots</title>
   </head>
   <body class="page">
     <header class="header">
@@ -27,145 +18,47 @@
           alt="Bessie Coleman"
           class="profile__avatar"
         />
-
         <div class="profile__info">
           <h1 class="profile__name">Bessie Coleman</h1>
           <p class="profile__description">Civil Aviator</p>
           <button class="profile__edit-btn" type="button">
-            <img
-              src="./images/Edit_Icon.svg"
-              alt="Edit information"
-              class="edit-icon"
-            />
+            <img src="./images/Edit_Icon.svg" alt="Edit" class="edit-icon" />
             Edit Profile
           </button>
         </div>
-
         <button class="profile__new-post-btn" type="button">
-          <img
-            src="images/Plus_icon.svg"
-            alt="New post button"
-            class="plus-icon"
-          />
+          <img src="images/Plus_icon.svg" alt="New post" class="plus-icon" />
           New Post
         </button>
       </section>
+
       <section class="cards page__section">
-        <div class="cards__grid">
-          <article class="card">
-            <img
-              src="./images/1-photo-by-moritz-feldmann-from-pexels.jpg"
-              alt="House in the mountains"
-              class="card__image"
-            />
-
-            <div class="card__content">
-              <h2 class="card__title">Val Thorens</h2>
-              <button type="button" class="card__like-button">
-                <img
-                  src="images/Like_Icon.svg"
-                  alt=" Like this post"
-                  class="like-icon"
-                />
-              </button>
-            </div>
-          </article>
-          <article class="card">
-            <img
-              src="./images/2-photo-by-ceiline-from-pexels.jpg"
-              alt="Restaurant Terrace"
-              class="card__image"
-            />
-
-            <div class="card__content">
-              <h2 class="card__title">Restaurant Terrace</h2>
-              <button type="button" class="card__like-button">
-                <img
-                  src="images/Like_Icon.svg"
-                  alt="Like this post"
-                  class="Like-Icon"
-                />
-              </button>
-            </div>
-          </article>
-          <article class="card">
-            <img
-              src="./images/3-photo-by-tubanur-dogan-from-pexels.jpg"
-              alt="Outdoor cafe"
-              class="card__image"
-            />
-
-            <div class="card__content">
-              <h2 class="card__title">An Outdoor Cafe</h2>
-              <button type="button" class="card__like-button">
-                <img
-                  src="images/Like_Icon.svg"
-                  alt="Like this post"
-                  class="like-icon"
-                />
-              </button>
-            </div>
-          </article>
-          <article class="card">
-            <img
-              src="./images/4-photo-by-maurice-laschet-from-pexels.jpg"
-              alt="Long bridge"
-              class="card__image"
-            />
-
-            <div class="card__content">
-              <h2 class="card__title">A Very Long Bridge over the Forest</h2>
-              <button type="button" class="card__like-button">
-                <img
-                  src="images/Like_Icon.svg"
-                  alt="Like this post"
-                  class="like-icon"
-                />
-              </button>
-            </div>
-          </article>
-          <article class="card">
-            <img
-              src="./images/5-photo-by-van-anh-nguyen-from-pexels.jpg"
-              alt="Empty building hall"
-              class="card__image"
-            />
-
-            <div class="card__content">
-              <h2 class="card__title">Tunnel With Morning Light</h2>
-              <button type="button" class="card__like-button">
-                <img
-                  src="images/Like_Icon.svg"
-                  alt="Like this post"
-                  class="like-icon"
-                />
-              </button>
-            </div>
-          </article>
-          <article class="card">
-            <img
-              src="./images/6-photo-by-moritz-feldmann-from-pexels.jpg"
-              alt="Cabin In The Snow"
-              class="card__image"
-            />
-
-            <div class="card__content">
-              <h2 class="card__title">Mountain House</h2>
-              <button type="button" class="card__like-button">
-                <img
-                  src="images/Like_Icon.svg"
-                  alt="Like this post"
-                  class="like-icon"
-                />
-              </button>
-            </div>
-          </article>
-        </div>
+        <div class="cards__grid"></div>
       </section>
     </main>
+
     <footer class="footer">
       <p class="footer__text">© 2025 Spots</p>
     </footer>
+    <template id="card-template">
+      <article class="card">
+        <img class="card__image" />
+        <div class="card__content">
+          <h2 class="card__title"></h2>
+          <button type="button" class="card__like-button">
+            <img src="images/Like_Icon.svg" alt="Like" class="like-icon" />
+          </button>
+          <button type="button" class="card__delete-button">
+            <img
+              src="images/Delete_Icon.svg"
+              alt="Delete"
+              class="delete-icon"
+            />
+          </button>
+        </div>
+      </article>
+    </template>
+
     <div class="modal" id="edit-profile-modal">
       <div class="modal__container">
         <button
@@ -175,8 +68,8 @@
         ></button>
         <h2 class="modal__title">Edit Profile</h2>
         <form class="modal__form">
-          <label for="profile-name__input" class="modal__label">
-            Name
+          <label class="modal__label"
+            >Name
             <input
               id="profile-name__input"
               type="text"
@@ -184,8 +77,8 @@
               placeholder="Type your name"
             />
           </label>
-          <label for="profile-description__input" class="modal__label">
-            Description
+          <label class="modal__label"
+            >Description
             <input
               id="profile-description__input"
               type="text"
@@ -193,10 +86,11 @@
               placeholder="Describe yourself"
             />
           </label>
-          <button type="submit" class="modal__submit-btn"></button>
+          <button type="submit" class="modal__submit-btn">Save</button>
         </form>
       </div>
     </div>
+
     <div class="modal" id="new-post-modal">
       <div class="modal__container">
         <button
@@ -206,28 +100,41 @@
         ></button>
         <h2 class="modal__title">New Post</h2>
         <form class="modal__form">
-          <label for="card-image-input" class="modal__label">
-            Image link
+          <label class="modal__label"
+            >Image link
             <input
               id="card-image-input"
               type="url"
               class="modal__input"
-              placeholder="Paste a link to the picture"
+              placeholder="Paste image URL"
             />
           </label>
-          <label for="caption-input" class="modal__label">
-            Caption
+          <label class="modal__label"
+            >Caption
             <input
               id="caption-input"
               type="text"
               class="modal__input"
-              placeholder="Type your caption"
+              placeholder="Type caption"
             />
           </label>
-          <button type="submit" class="modal__submit-btn"></button>
+          <button type="submit" class="modal__submit-btn">Save</button>
         </form>
       </div>
     </div>
+
+    <div class="modal" id="preview-image-modal">
+      <div class="modal__container modal__container_type_preview">
+        <button
+          type="button"
+          class="modal__close-btn"
+          id="closePreviewImageModal"
+        ></button>
+        <img class="modal__image-preview" />
+        <p class="modal__caption"></p>
+      </div>
+    </div>
+
     <script src="scripts/index.js"></script>
   </body>
 </html>
