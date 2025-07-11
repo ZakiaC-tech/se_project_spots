@@ -1,5 +1,6 @@
 .modal {
   visibility: hidden;
+  opacity: 0;
   background-color: #00000080;
   position: fixed;
   top: 0;
@@ -10,10 +11,13 @@
   justify-content: center;
   align-items: center;
   padding: 10px;
+  transition: visibility 0s 0.3s, opacity 0.3s ease-in;
 }
 
 .modal_is-opened {
   visibility: visible;
+  opacity: 1;
+  transition: visibility 0s, opacity 0.3s ease-in;
 }
 
 .modal__container {
@@ -25,6 +29,15 @@
   padding: 32px 50px;
   position: relative;
   border: 8px;
+  box-sizing: border-box;
+}
+
+.modal__container-preview {
+  padding: 15px;
+  background-color: #fff;
+  border-radius: 8px;
+  max-width: 500px;
+  width: 100%;
 }
 
 .modal__close-btn {
@@ -39,6 +52,7 @@
   background-color: transparent;
   background-repeat: no-repeat;
   background-size: cover;
+  border: none;
 }
 
 .modal__title {
@@ -70,6 +84,7 @@ height: 52px; */
   border-color: rgba(33, 33, 33, 0.4);
   color: #212121;
   font-size: 20px;
+  box-sizing: border-box;
 }
 
 .modal__input::placeholder {
@@ -92,7 +107,7 @@ height: 52px; */
   align-items: center;
   justify-content: center;
   gap: 8px;
-  background-image: url("../images/Button_Large.svg");
+
   border: none;
   font-size: 14px;
   cursor: pointer;
@@ -106,43 +121,41 @@ height: 52px; */
 }
 
 @media (max-width: 560px) {
-  .modal__submit-btn {
-    width: 140px;
-    height: 48px;
-    padding-top: 12px;
-    padding-right: 24px;
-    padding-bottom: 12px;
-    padding-left: 24px;
-    font-size: 12px;
-    gap: 6px;
+  .modal__container {
+    padding: 20px;
+    width: 90%;
+    max-width: 400px;
   }
 
-  .modal__submit-icon {
-    width: 20px;
+  .modal__submit-btn {
+    width: 100%;
+    padding: 12px;
+  }
+
+  .modal__close-btn {
+    top: 15px;
+    right: 15px;
+    width: 28px;
+    height: 28px;
   }
 }
 
 @media (max-width: 1024px) {
+  .modal__container {
+    padding: 20px;
+    width: 80%;
+    max-width: 600px;
+  }
+
   .modal__submit-btn {
-    width: 156px;
-    height: 52px;
-    padding-top: 18px;
-    padding-right: 32px;
-    padding-bottom: 18px;
-    padding-left: 32px;
-    font-size: 14px;
-    gap: 8px;
+    width: 100%;
+    padding: 14px;
   }
 
-  .modal__submit-btn-icon {
-    width: 24px;
-  }
-
-  .modal__title {
-    font-size: 20px;
-  }
-
-  .modal__input {
-    font-size: 16px;
+  .modal__close-btn {
+    width: 32px;
+    height: 32px;
+    top: 20px;
+    right: 20px;
   }
 }

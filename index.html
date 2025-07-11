@@ -45,16 +45,8 @@
         <img class="card__image" />
         <div class="card__content">
           <h2 class="card__title"></h2>
-          <button type="button" class="card__like-button">
-            <img src="images/Like_Icon.svg" alt="Like" class="like-icon" />
-          </button>
-          <button type="button" class="card__delete-button">
-            <img
-              src="images/Delete_Icon.svg"
-              alt="Delete"
-              class="delete-icon"
-            />
-          </button>
+          <button type="button" class="card__like-button"></button>
+          <button type="button" class="card__delete-button"></button>
         </div>
       </article>
     </template>
@@ -75,6 +67,7 @@
               type="text"
               class="modal__input"
               placeholder="Type your name"
+              required
             />
           </label>
           <label class="modal__label"
@@ -84,6 +77,7 @@
               type="text"
               class="modal__input"
               placeholder="Describe yourself"
+              required
             />
           </label>
           <button type="submit" class="modal__submit-btn">Save</button>
@@ -107,6 +101,7 @@
               type="url"
               class="modal__input"
               placeholder="Paste image URL"
+              required
             />
           </label>
           <label class="modal__label"
@@ -116,6 +111,7 @@
               type="text"
               class="modal__input"
               placeholder="Type caption"
+              required
             />
           </label>
           <button type="submit" class="modal__submit-btn">Save</button>
@@ -124,13 +120,14 @@
     </div>
 
     <div class="modal" id="preview-image-modal">
-      <div class="modal__container modal__container_type_preview">
+      <div class="modal__container-preview">
         <button
           type="button"
-          class="modal__close-btn"
+          class="modal__close-btn modal__close-btn_type_preview"
           id="closePreviewImageModal"
         ></button>
-        <img class="modal__image-preview" />
+
+        <img class="modal__image-preview" src="#" alt="" />
         <p class="modal__caption"></p>
       </div>
     </div>
