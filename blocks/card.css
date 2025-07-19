@@ -64,8 +64,10 @@
   height: 32px;
 }
 
-.card__delete-button:hover .delete-icon {
-  opacity: 0.7;
+.card__delete-button:hover {
+  background-color: red;
+  cursor: pointer;
+  opacity: 1;
 }
 
 @media screen and (max-width: 767px) {
