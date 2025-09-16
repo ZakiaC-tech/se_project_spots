@@ -65,10 +65,6 @@
 }
 
 .modal__close-btn {
-  top: 15px;
-  right: 15px;
-  width: 28px;
-  height: 28px;
   position: absolute;
   width: 40px;
   height: 40px;
@@ -85,8 +81,8 @@
 
 .modal__close-btn_type_preview {
   position: absolute;
-  top: 60px;
-  right: 442px;
+  top: -46px;
+  right: -10px;
   width: 40px;
   height: 40px;
   background-image: url("../images/modal_preview-close-btn.svg");
