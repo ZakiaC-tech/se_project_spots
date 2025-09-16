@@ -203,8 +203,8 @@
   .modal__close-btn_type_preview {
     width: 26px;
     height: 26px;
-    top: 16px;
-    right: 16px;
+    top: -16px;
+    right: -16px;
   }
 
   .modal__container-preview {
