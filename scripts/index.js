@@ -1,5 +1,3 @@
-console.log("Page script loaded and JavaScript is connected.");
-
 const initialCards = [
   {
     name: "Val Thorens",
