@@ -21,13 +21,21 @@
         <div class="profile__info">
           <h1 class="profile__name">Bessie Coleman</h1>
           <p class="profile__description">Civil Aviator</p>
-          <button class="profile__edit-btn" type="button">
+          <button
+            class="profile__edit-btn"
+            type="button"
+            aria-label="Edit Profile"
+          >
             <img src="./images/Edit_Icon.svg" alt="Edit" class="edit-icon" />
             Edit Profile
           </button>
         </div>
-        <button class="profile__new-post-btn" type="button">
-          <img src="images/Plus_icon.svg" alt="New post" class="plus-icon" />
+        <button
+          class="profile__new-post-btn"
+          type="button"
+          aria-label="New Post"
+        >
+          <img src="./images/Plus_icon.svg" alt="New post" class="plus-icon" />
           New Post
         </button>
       </section>
@@ -40,13 +48,22 @@
     <footer class="footer">
       <p class="footer__text">© 2025 Spots</p>
     </footer>
+
     <template id="card-template">
       <article class="card">
-        <img class="card__image" />
+        <img class="card__image" alt="" />
         <div class="card__content">
           <h2 class="card__title"></h2>
-          <button type="button" class="card__like-button"></button>
-          <button type="button" class="card__delete-button"></button>
+          <button
+            type="button"
+            class="card__like-button"
+            aria-label="Like"
+          ></button>
+          <button
+            type="button"
+            class="card__delete-button"
+            aria-label="Delete"
+          ></button>
         </div>
       </article>
     </template>
@@ -57,28 +74,38 @@
           type="button"
           class="modal__close-btn"
           id="closeEditProfileModal"
+          aria-label="Close Edit Profile Modal"
         ></button>
         <h2 class="modal__title">Edit Profile</h2>
-        <form class="modal__form">
-          <label class="modal__label"
-            >Name
+        <form class="modal__form" name="edit-profile-form" novalidate>
+          <label class="modal__label">
+            Name
             <input
               id="profile-name__input"
               type="text"
               class="modal__input"
               placeholder="Type your name"
               required
+              minlength="2"
+              maxlength="40"
             />
+            <span class="modal__error" id="profile-name__input-error"></span>
           </label>
-          <label class="modal__label"
-            >Description
+          <label class="modal__label">
+            Description
             <input
               id="profile-description__input"
               type="text"
               class="modal__input"
               placeholder="Describe yourself"
               required
+              minlength="2"
+              maxlength="200"
             />
+            <span
+              class="modal__error"
+              id="profile-description__input-error"
+            ></span>
           </label>
           <button type="submit" class="modal__submit-btn">Save</button>
         </form>
@@ -91,11 +118,12 @@
           type="button"
           class="modal__close-btn"
           id="closeNewPostModal"
+          aria-label="Close New Post Modal"
         ></button>
         <h2 class="modal__title">New Post</h2>
-        <form class="modal__form">
-          <label class="modal__label"
-            >Image link
+        <form class="modal__form" name="new-card-form" novalidate>
+          <label class="modal__label">
+            Image link
             <input
               id="card-image-input"
               type="url"
@@ -103,32 +131,39 @@
               placeholder="Paste image URL"
               required
             />
+            <span class="modal__error" id="card-image-input-error"></span>
           </label>
-          <label class="modal__label"
-            >Caption
+          <label class="modal__label">
+            Caption
             <input
               id="caption-input"
               type="text"
               class="modal__input"
               placeholder="Type caption"
               required
+              minlength="2"
+              maxlength="30"
             />
+            <span class="modal__error" id="caption-input-error"></span>
           </label>
           <button type="submit" class="modal__submit-btn">Save</button>
         </form>
       </div>
     </div>
+
     <div class="modal modal_type_preview" id="preview-image-modal">
       <div class="modal__container-preview">
-        <img class="modal__image-preview" src="" alt="Preview image" />
+        <img class="modal__image-preview" alt="Preview image" />
         <p class="modal__caption"></p>
         <button
           type="button"
           class="modal__close-btn modal__close-btn_type_preview"
           id="closePreviewImageModal"
+          aria-label="Close Preview Modal"
         ></button>
       </div>
     </div>
-    <script src="scripts/index.js"></script>
+
+    <script type="module" src="scripts/index.js"></script>
   </body>
 </html>

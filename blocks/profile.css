@@ -1,11 +1,8 @@
 .profile {
   display: flex;
-
   justify-content: space-between;
   padding: 20px;
-
   background-color: #fdf6e3;
-
   gap: 20px;
   position: relative;
   border-bottom: 1px solid #21212166;
@@ -51,7 +48,7 @@
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   max-width: 373px;
-  font-family: Poppins;
+  font-family: "Poppins", Arial, sans-serif;
   font-weight: 500;
   font-size: 16px;
   line-height: 100%;
@@ -68,8 +65,7 @@
   cursor: pointer;
   padding: 0;
   margin-top: auto;
-
-  font-family: Poppins;
+  font-family: "Poppins", Arial, sans-serif;
   font-weight: 500;
   font-size: 16px;
   line-height: 100%;
