@@ -100,12 +100,22 @@ function createCard(data) {
   const card = cardTemplate.cloneNode(true);
   const cardImage = card.querySelector(".card__image");
   const cardTitle = card.querySelector(".card__title");
+  const likeButton = card.querySelector(".card__like-button");
+  const deleteButton = card.querySelector(".card__delete-button");
 
   cardImage.src = data.link;
   cardImage.alt = data.name;
   cardTitle.textContent = data.name;
 
   cardImage.addEventListener("click", () => openPreviewModal(data));
+
+  likeButton.addEventListener("click", () => {
+    likeButton.classList.toggle("card__like-button_active");
+  });
+
+  deleteButton.addEventListener("click", () => {
+    card.remove();
+  });
 
   return card;
 }
@@ -146,6 +156,7 @@ document.querySelectorAll(".modal__close-btn").forEach((btn) => {
 });
 
 const newCardForm = newPostModal.querySelector(".modal__form");
+
 newCardForm.addEventListener("submit", (evt) => {
   evt.preventDefault();
 
@@ -161,6 +172,9 @@ newCardForm.addEventListener("submit", (evt) => {
   cardsContainer.prepend(cardElement);
 
   closeModal(newPostModal);
+
+  newCardForm.reset();
+
   resetForm(newCardForm, validationConfig);
 });
 

@@ -164,6 +164,25 @@
   background-color: rgba(33, 33, 33, 0.8);
 }
 
+.modal__error {
+  color: red;
+  font-size: 12px;
+  line-height: 1.2;
+  height: 14px;
+  visibility: hidden;
+  margin-top: 2px;
+}
+
+.modal__error_visible {
+  visibility: visible;
+}
+
+.modal__submit-btn_disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
 @media (max-width: 560px) {
   .modal__container {
     width: 288px;
