@@ -148,6 +148,23 @@ newPostButton.addEventListener("click", () => {
   openModal(newPostModal);
 });
 
+const editProfileForm = editProfileModal.querySelector(".modal__form");
+
+editProfileForm.addEventListener("submit", (evt) => {
+  evt.preventDefault();
+
+  const nameInput = editProfileForm.querySelector("#profile-name__input");
+  const descriptionInput = editProfileForm.querySelector(
+    "#profile-description__input"
+  );
+
+  document.querySelector(".profile__name").textContent = nameInput.value;
+  document.querySelector(".profile__description").textContent =
+    descriptionInput.value;
+
+  closeModal(editProfileModal);
+});
+
 document.querySelectorAll(".modal__close-btn").forEach((btn) => {
   btn.addEventListener("click", (evt) => {
     const modal = evt.target.closest(".modal");
