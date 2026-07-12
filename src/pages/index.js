@@ -123,6 +123,10 @@ function createCard(data) {
   const cardImage = card.querySelector(".card__image");
   const cardTitle = card.querySelector(".card__title");
   const likeButton = card.querySelector(".card__like-button");
+
+  if (data.isLiked) {
+    likeButton.classList.add("card__like-button_active");
+  }
   const deleteButton = card.querySelector(".card__delete-button");
 
   cardImage.src = data.link;
@@ -132,9 +136,22 @@ function createCard(data) {
   cardImage.addEventListener("click", () => openPreviewModal(data));
 
   likeButton.addEventListener("click", () => {
-    likeButton.classList.toggle("card__like-button_active");
+    if (likeButton.classList.contains("card__like-button_active")) {
+      api
+        .removeLike(data._id)
+        .then(() => {
+          likeButton.classList.remove("card__like-button_active");
+        })
+        .catch(console.error);
+    } else {
+      api
+        .addLike(data._id)
+        .then(() => {
+          likeButton.classList.add("card__like-button_active");
+        })
+        .catch(console.error);
+    }
   });
-
   deleteButton.addEventListener("click", () => {
     api
       .removeCard(data._id)
