@@ -59,6 +59,12 @@ const editProfileModal = document.querySelector("#edit-profile-modal");
 const newPostModal = document.querySelector("#new-post-modal");
 const previewModal = document.querySelector("#preview-image-modal");
 
+const deleteModal = document.querySelector("#delete-card-modal");
+const deleteForm = deleteModal.querySelector(".modal__form");
+
+let selectedCard;
+let selectedCardId;
+
 function renderUserInfo(user) {
   document.querySelector(".profile__name").textContent = user.name;
   document.querySelector(".profile__description").textContent = user.about;
@@ -153,12 +159,10 @@ function createCard(data) {
     }
   });
   deleteButton.addEventListener("click", () => {
-    api
-      .removeCard(data._id)
-      .then(() => {
-        card.remove();
-      })
-      .catch(console.error);
+    selectedCard = card;
+    selectedCardId = data._id;
+
+    openModal(deleteModal);
   });
 
   return card;
@@ -252,6 +256,17 @@ newCardForm.addEventListener("submit", (evt) => {
     .catch(console.error);
 });
 
+deleteForm.addEventListener("submit", (evt) => {
+  evt.preventDefault();
+
+  api
+    .removeCard(selectedCardId)
+    .then(() => {
+      selectedCard.remove();
+      closeModal(deleteModal);
+    })
+    .catch(console.error);
+});
 // ========================
 // INIT
 // ========================
