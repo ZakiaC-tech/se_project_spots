@@ -62,6 +62,9 @@ const previewModal = document.querySelector("#preview-image-modal");
 const deleteModal = document.querySelector("#delete-card-modal");
 const deleteForm = deleteModal.querySelector(".modal__form");
 
+const editAvatarButton = document.querySelector(".profile__avatar-edit-btn");
+const editAvatarModal = document.querySelector("#edit-avatar-modal");
+
 let selectedCard;
 let selectedCardId;
 
@@ -191,6 +194,12 @@ editProfileButton.addEventListener("click", () => {
 
   openModal(editProfileModal);
 });
+editAvatarButton.addEventListener("click", () => {
+  const form = editAvatarModal.querySelector(".modal__form");
+  resetForm(form, validationConfig);
+
+  openModal(editAvatarModal);
+});
 
 newPostButton.addEventListener("click", () => {
   const form = newPostModal.querySelector(".modal__form");
@@ -229,7 +238,25 @@ editProfileForm.addEventListener("submit", (evt) => {
     })
     .catch(console.error);
 });
+const editAvatarForm = editAvatarModal.querySelector(".modal__form");
 
+editAvatarForm.addEventListener("submit", (evt) => {
+  evt.preventDefault();
+
+  const avatarInput = editAvatarForm.querySelector("#avatar-input");
+
+  const avatarData = {
+    avatar: avatarInput.value,
+  };
+
+  api
+    .editAvatar(avatarData)
+    .then((user) => {
+      document.querySelector(".profile__avatar").src = user.avatar;
+      closeModal(editAvatarModal);
+    })
+    .catch(console.error);
+});
 // new card submit
 const newCardForm = newPostModal.querySelector(".modal__form");
 
