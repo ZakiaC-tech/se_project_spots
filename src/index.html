@@ -114,7 +114,34 @@
         </form>
       </div>
     </div>
+    <div class="modal" id="edit-avatar-modal">
+      <div class="modal__container">
+        <button
+          type="button"
+          class="modal__close-btn"
+          id="closeEditAvatarModal"
+          aria-label="Close Avatar Modal"
+        ></button>
 
+        <h2 class="modal__title">Change profile picture</h2>
+
+        <form class="modal__form" name="edit-avatar-form" novalidate>
+          <label class="modal__label">
+            Image link
+            <input
+              id="avatar-input"
+              type="url"
+              class="modal__input"
+              placeholder="Paste image URL"
+              required
+            />
+            <span class="modal__error" id="avatar-input-error"></span>
+          </label>
+
+          <button type="submit" class="modal__submit-btn">Save</button>
+        </form>
+      </div>
+    </div>
     <div class="modal" id="new-post-modal">
       <div class="modal__container">
         <button
