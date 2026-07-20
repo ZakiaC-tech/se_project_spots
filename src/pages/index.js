@@ -176,7 +176,13 @@ function renderInitialCards(cards) {
     cardsContainer.append(createCard(item));
   });
 }
-
+function renderLoading(isLoading, button, defaultText, loadingText) {
+  if (isLoading) {
+    button.textContent = loadingText;
+  } else {
+    button.textContent = defaultText;
+  }
+}
 // ========================
 // EVENT LISTENERS
 // ========================
@@ -220,6 +226,10 @@ const editProfileForm = editProfileModal.querySelector(".modal__form");
 editProfileForm.addEventListener("submit", (evt) => {
   evt.preventDefault();
 
+  const submitButton = editProfileForm.querySelector(".modal__submit-btn");
+
+  renderLoading(true, submitButton, "Save", "Saving...");
+
   const nameInput = editProfileForm.querySelector("#profile-name__input");
   const descriptionInput = editProfileForm.querySelector(
     "#profile-description__input",
@@ -236,18 +246,24 @@ editProfileForm.addEventListener("submit", (evt) => {
       renderUserInfo(user);
       closeModal(editProfileModal);
     })
-    .catch(console.error);
+    .catch(console.error)
+    .finally(() => {
+      renderLoading(true, submitButton, "Save", "Saving...");
+    });
 });
+
 const editAvatarForm = editAvatarModal.querySelector(".modal__form");
 
 editAvatarForm.addEventListener("submit", (evt) => {
   evt.preventDefault();
+  const submitButton = editAvatarForm.querySelector(".modal__submit-btn");
 
   const avatarInput = editAvatarForm.querySelector("#avatar-input");
 
   const avatarData = {
     avatar: avatarInput.value,
   };
+  renderLoading(true, submitButton, "Save", "Saving...");
 
   api
     .editAvatar(avatarData)
@@ -255,13 +271,17 @@ editAvatarForm.addEventListener("submit", (evt) => {
       document.querySelector(".profile__avatar").src = user.avatar;
       closeModal(editAvatarModal);
     })
-    .catch(console.error);
+    .catch(console.error)
+    .finally(() => {
+      renderLoading(true, submitButton, "Save", "Saving...");
+    });
 });
 // new card submit
 const newCardForm = newPostModal.querySelector(".modal__form");
 
 newCardForm.addEventListener("submit", (evt) => {
   evt.preventDefault();
+  const submitButton = newCardForm.querySelector(".modal__submit-btn");
 
   const imageInput = newCardForm.querySelector("#card-image-input");
   const captionInput = newCardForm.querySelector("#caption-input");
@@ -270,6 +290,7 @@ newCardForm.addEventListener("submit", (evt) => {
     name: captionInput.value,
     link: imageInput.value,
   };
+  renderLoading(true, submitButton, "Save", "Saving...");
 
   api
     .addCard(newCardData)
@@ -280,11 +301,16 @@ newCardForm.addEventListener("submit", (evt) => {
       newCardForm.reset();
       resetForm(newCardForm, validationConfig);
     })
-    .catch(console.error);
+    .catch(console.error)
+    .finally(() => {
+      renderLoading(true, submitButton, "Save", "Saving...");
+    });
 });
 
 deleteForm.addEventListener("submit", (evt) => {
   evt.preventDefault();
+  const submitButton = deleteForm.querySelector(".modal__submit-btn");
+  renderLoading(true, submitButton, "Delete", "Deleting...");
 
   api
     .removeCard(selectedCardId)
@@ -292,7 +318,10 @@ deleteForm.addEventListener("submit", (evt) => {
       selectedCard.remove();
       closeModal(deleteModal);
     })
-    .catch(console.error);
+    .catch(console.error)
+    .finally(() => {
+      renderLoading(true, submitButton, "Delete", "Deleting...");
+    });
 });
 // ========================
 // INIT
