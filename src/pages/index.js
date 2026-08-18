@@ -26,7 +26,10 @@ console.log("JS is running");
 window.addEventListener("DOMContentLoaded", () => {
   document.querySelector(".header__logo").src = logo;
 
-  document.querySelector(".edit-icon").src = editIcon;
+  document.querySelectorAll(".edit-icon").forEach((icon) => {
+    icon.src = editIcon;
+  });
+
   document.querySelector(".plus-icon").src = plusIcon;
 });
 

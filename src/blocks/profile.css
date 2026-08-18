@@ -25,14 +25,27 @@
   position: absolute;
   inset: 0;
   border: none;
-  background: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.5);
+  background-image: url("../images/Group_2.svg");
+  background-repeat: no-repeat;
+  background-position: center bottom 16px;
+  background-size: 16px 16px;
   opacity: 0;
   cursor: pointer;
   transition: opacity 0.3s ease;
 }
-
-.profile__avatar-container:hover .profile__avatar-edit-btn {
-  opacity: 1;
+.profile__avatar-edit-text {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  font-family: "Poppins", Arial, sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0;
+  white-space: nowrap;
 }
 
 .profile__info {
