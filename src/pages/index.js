@@ -3,6 +3,7 @@ import "../pages/index.css";
 
 // Utilities/classes
 import Api from "../utils/Api.js";
+import { validationConfig } from "../utils/constants.js";
 import { enableValidation, resetForm } from "../scripts/validation.js";
 
 // Images
@@ -10,6 +11,7 @@ import { enableValidation, resetForm } from "../scripts/validation.js";
 import logo from "../images/Logo.svg";
 import editIcon from "../images/Edit_Icon.svg";
 import plusIcon from "../images/Plus_icon.svg";
+import avatarEditIcon from "../images/Group_2.svg";
 
 const api = new Api({
   baseUrl: "https://around-api.en.tripleten-services.com/v1",
@@ -31,18 +33,12 @@ window.addEventListener("DOMContentLoaded", () => {
   });
 
   document.querySelector(".plus-icon").src = plusIcon;
+  document.querySelector(".profile__avatar-edit-icon").src = avatarEditIcon;
 });
 
 // ========================
 // VALIDATION
 // ========================
-const validationConfig = {
-  formSelector: ".modal__form",
-  inputSelector: ".modal__input",
-  submitButtonSelector: ".modal__submit-btn",
-  inactiveButtonClass: "modal__submit-btn_disabled",
-  errorClass: "modal__error_visible",
-};
 
 enableValidation(validationConfig);
 
@@ -129,7 +125,7 @@ function openPreviewModal(data) {
 // ========================
 // CARDS
 // ========================
-function createCard(data) {
+function getCardElement(data) {
   const card = cardTemplate.cloneNode(true);
 
   const cardImage = card.querySelector(".card__image");
@@ -176,7 +172,7 @@ function createCard(data) {
 
 function renderInitialCards(cards) {
   cards.forEach((item) => {
-    cardsContainer.append(createCard(item));
+    cardsContainer.append(getCardElement(item));
   });
 }
 function renderLoading(isLoading, button, defaultText, loadingText) {
@@ -251,7 +247,7 @@ editProfileForm.addEventListener("submit", (evt) => {
     })
     .catch(console.error)
     .finally(() => {
-      renderLoading(true, submitButton, "Save", "Saving...");
+      renderLoading(false, submitButton, "Save", "Saving...");
     });
 });
 
@@ -276,7 +272,7 @@ editAvatarForm.addEventListener("submit", (evt) => {
     })
     .catch(console.error)
     .finally(() => {
-      renderLoading(true, submitButton, "Save", "Saving...");
+      renderLoading(false, submitButton, "Save", "Saving...");
     });
 });
 // new card submit
@@ -298,7 +294,7 @@ newCardForm.addEventListener("submit", (evt) => {
   api
     .addCard(newCardData)
     .then((card) => {
-      cardsContainer.prepend(createCard(card));
+      cardsContainer.prepend(getCardElement(card));
 
       closeModal(newPostModal);
       newCardForm.reset();
@@ -306,7 +302,7 @@ newCardForm.addEventListener("submit", (evt) => {
     })
     .catch(console.error)
     .finally(() => {
-      renderLoading(true, submitButton, "Save", "Saving...");
+      renderLoading(false, submitButton, "Save", "Saving...");
     });
 });
 
@@ -323,7 +319,7 @@ deleteForm.addEventListener("submit", (evt) => {
     })
     .catch(console.error)
     .finally(() => {
-      renderLoading(true, submitButton, "Delete", "Deleting...");
+      renderLoading(false, submitButton, "Delete", "Deleting...");
     });
 });
 // ========================
@@ -338,7 +334,7 @@ api
 
 api
   .getInitialCards()
-  .then((cards) => {
-    renderInitialCards(cards);
+  .then((initialCards) => {
+    renderInitialCards(initialCards);
   })
   .catch(console.error);

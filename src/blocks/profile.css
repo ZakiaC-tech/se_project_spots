@@ -26,19 +26,22 @@
   inset: 0;
   border: none;
   background-color: rgba(0, 0, 0, 0.5);
-  background-image: url("../images/Group_2.svg");
-  background-repeat: no-repeat;
-  background-position: center bottom 16px;
-  background-size: 16px 16px;
   opacity: 0;
   cursor: pointer;
   transition: opacity 0.3s ease;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 8px;
+  padding-bottom: 16px;
 }
+
+.profile__avatar-container:hover .profile__avatar-edit-btn {
+  opacity: 1;
+}
+
 .profile__avatar-edit-text {
-  position: absolute;
-  bottom: 16px;
-  left: 50%;
-  transform: translateX(-50%);
   color: #fff;
   font-family: "Poppins", Arial, sans-serif;
   font-weight: 500;
@@ -178,5 +181,20 @@
   .profile__new-post-btn {
     width: 100%;
     max-width: 288px;
+  }
+  .profile__avatar-edit-btn {
+    opacity: 1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 4px;
+    padding-bottom: 8px;
+  }
+  .profile__avatar-edit-text {
+    font-size: 10px;
+  }
+  .profile__avatar-container {
+    width: 80px;
+    height: 80px;
   }
 }
