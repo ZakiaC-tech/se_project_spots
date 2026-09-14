@@ -18,11 +18,9 @@
 
 ## 🎥 Project Video
 
-https://www.loom.com/share/9cd0ba447462458c8a25cf33829f96f7
+https://www.loom.com/share/eb08b3de7727400b8ffe08650b0760b7
 
 ## 🚀 Live Demo
 
 Check out the live version here:  
-[https://zakiac-tech.github.io/se_project_spots/]
-
-Check out [this video](https://drive.google.com/file/d/17mAN0bFSzBbCkNYpOs0Vs9SvrUfUcWbL/view?usp=sharing), where I describe my project and some challenges I faced while building it.
+https://zakiac-tech.github.io/se_project_spots/
